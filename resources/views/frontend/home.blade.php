@@ -207,7 +207,7 @@
     </div>
     {{$ecolese->links('pagination::bootstrap-4')}}
     {{-- <nav aria-label="Page navigation example">
-      <ul class="pagination align-items-center justify-content-center">
+      <ul class="paginatiobn align-items-center justify-content-center">
         <li class="page-item"><a class="page-link" href="#">Previous</a></li>
         <li class="page-item"><a class="page-link" href="#">1</a></li>
         <li class="page-item"><a class="page-link" href="#">2</a></li>
