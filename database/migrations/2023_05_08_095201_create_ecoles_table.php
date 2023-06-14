@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('address');
             $table->text('description');
             $table->string('image_couverture');
+            $table->string('fichier');
             $table->text('tel');
             $table->string('type')->nullable();
             $table->string('resultatcep');

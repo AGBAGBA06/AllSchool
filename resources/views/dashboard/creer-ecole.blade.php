@@ -87,6 +87,14 @@
                 </div>
               </div>
 
+              
+              <div class="row mb-4">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Fiche d'info</label>
+                <div class="col-sm-8">
+                  <input class="form-control"  name="fichier" type="file" id="formFile">
+                </div>
+              </div>
+
               <div class="row mb-4">
                 <label for="inputText" class="col-sm-2 col-form-label">Address</label>
                 <div class="col-sm-8">

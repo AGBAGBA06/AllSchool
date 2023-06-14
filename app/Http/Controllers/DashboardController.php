@@ -55,6 +55,7 @@ class DashboardController extends Controller
                                    'resultatcep'=>'required',
                                    'description'=>'required',
                                    'tel'=>'required',
+                                   'fichier'=>'required',
                                    'image_couverture'=>'image|nullable']);
 
                                    if($request->hasFile('image_couverture')){
@@ -69,10 +70,25 @@ class DashboardController extends Controller
                                       //uplaoder l'image
                                       $path=$request->file('image_couverture')->move('upload/ecoles', 
                                       $fileNametostore);
+
+
+                                      if($request->hasFile('fichier')){
+                                        //1-select image with extension
+                                        $fileNameWithExt=$request->file('fichier')->getClientOriginalName();
+                                        //2-get just file name
+                                        $fileName=pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+                                        //3-get just extension
+                                         $extension = $request->file('fichier')->getClientOriginalExtension();
+                                        //4-file name store
+                                        $fileNametostor=$fileName.'_'.time().'.'.$extension;
+                                        //uplaoder l'image
+                                        $path=$request->file('fichier')->move('pdf/pdf', 
+                                        $fileNametostor);
+                                     }
                                    }
 
                                    else{
-                                       $fileNametostore='noimage.jpg';
+                                       $fileNametostor='noimage.jpg';
                                    }
 
                                    $ecole=new ecole();
@@ -89,7 +105,9 @@ class DashboardController extends Controller
                                    $ecole->tel=$request->input('tel');
                                    $ecole->directeur=$request->input('directeur');
                                    $ecole->description=$request->input('description');
+                                //    $ecole->fichier=$request->input('fichier');
                                    $ecole->image_couverture=$fileNametostore;
+                                   $ecole->fichier=$fileNametostor;
                                    $ecole->status=1;
                                    $ecole->save();
                                    return redirect('/creer_ecole')->with('status','L ecole   ' .$ecole->nom.'  a ete bien publiee');
@@ -111,6 +129,7 @@ class DashboardController extends Controller
                                         'ville'=>'required',
                                         'domaine'=>'required',
                                         'directeur'=>'required',
+                                        'fichier'=>'required',
                                         'resultatbac'=>'required',
                                         'resultatbepc'=>'required',
                                         'resultatcep'=>'required',
@@ -125,6 +144,7 @@ class DashboardController extends Controller
                                    $ecole->address=$request->input('address');
                                    $ecole->niveau_scolaire=$request->input('niveau_scolaire');
                                    $ecole->ville=$request->input('ville');
+                                   $ecole->fichier=$request->input('fichier');
                                    $ecole->domaine=$request->input('domaine');
                                    $ecole->resultatcep=$request->input('resultatcep');
                                    $ecole->resultatbepc=$request->input('resultatbepc');
@@ -154,6 +174,7 @@ class DashboardController extends Controller
                           $ecole->image_couverture=$fileNametostore;
             }
 
+            
            $ecole->update();
            return redirect('/ecoles')->with('status','le ecole '.$ecole->nom.' a ete bien modifier');
         }

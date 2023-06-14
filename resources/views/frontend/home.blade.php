@@ -183,11 +183,11 @@
       <p> ecoles recentes</p>
     </div>
 
-    <div class="row justify-content-center">
+    <div  class="row justify-content-center">
 
       @foreach ($ecolese as $ecolee)
-      <div class="col-lg-4 col-md-6 d-flex mb-4 align-items-stretch">
-        <div class="course-item">
+      <div  class="col-lg-4 col-md-6 d-flex mb-4 align-items-stretch">
+        <div style="background-color: #f5fafa" class="course-item">
           <a href="{{asset('upload/ecoles/'.$ecolee->image_couverture)}}">
           <img src="{{asset('upload/ecoles/'.$ecolee->image_couverture)}}"  style="min-width:154px !important;object-fit:cover ; height:254px" class="card-img-top" alt="..."></a>
           <div class="course-content">
@@ -196,7 +196,7 @@
             </div>
 
             <h3><a href="{{url('/ecoles_details/'.$ecolee->id)}}">{{Str::limit($ecolee->nom, 75)}}</a></h3>
-                <div class="container"><p class="justify-content-center">{{Str::limit($ecolee->description, 195)}}</p>
+                <div class="container"><p class="justify-content-center">{{Str::limit($ecolee->description, 195)}} <a style="color: #ff5828" class="" href=" {{url('/ecoles_details/'.$ecolee->id)}}"> voir plus</a></p>
                 </div>               
             </div>
         </div>

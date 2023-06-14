@@ -16,7 +16,7 @@
         <div class="row">
           <div class="col-lg-8"> 
             <a href="{{asset('upload/ecoles/'.$ecoles->image_couverture)}}"> 
-              <img src="{{asset('upload/ecoles/'.$ecoles->image_couverture)}}" style="min-width:754px !important;object-fit:cover ; height:554px" class="img-fluid" alt="">
+              <img src="{{asset('upload/ecoles/'.$ecoles->image_couverture)}}" style="min-width:654px !important;object-fit:cover ; height:254px" class="img-fluid" alt="">
             </a>
             <h3>{{$ecoles->nom}}</h3>
            
@@ -34,7 +34,6 @@
               <h5>Nom</h5>
               <p>{{$ecoles->nom}}</p>
             </div>
-
             
 
             <div class="course-info d-flex justify-content-between align-items-center">
@@ -87,6 +86,12 @@
               <h5>domaine</h5>
               <p>{{$ecoles->domaine}}</p>
             </div>
+
+            <div class="course-info d-flex justify-content-between align-items-center">
+              <a class="btn btn-danger"  href="{{url('pdf/'.$ecoles->fichier)}}"><h4 style="color: aliceblue">fiche de renseignement a lire</h4></a>
+               {{-- <img src="{{asset('pdf/pdf/'.$offres->fichier)}}" alt="">  --}}
+              <p></p>
+            </div>
           </div>
         </div>
 
@@ -115,7 +120,9 @@
                     <p class=" justify-content-center align-items-center"></p>
                   </div>
                   <div class="col-lg-8 text-center order-1 order-lg-2">
-                    {{-- <img src="{{asset('upload/ecoles/'.$ecoles->image_couverture)}}" alt="" class="img-fluid"> --}}
+
+
+                    {{-- <img src="{{asset('upload/ecoles/'.$ecoles->image_couverture)}}"  alt="" class="img-fluid"> --}}
                   </div>
                 </div>
               </div>

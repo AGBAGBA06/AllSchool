@@ -31,8 +31,7 @@ Route::get('pourquoi/','App\Http\Controllers\FrontendController@pourquoi');
 Route::get('preference/','App\Http\Controllers\FrontendController@preference');
 Route::get('search/','App\Http\Controllers\FrontendController@searchecole');
 Route::get('/select_by_cat/{name}','App\Http\Controllers\FrontendController@select_by_cat');
-Route::get('pdf/', 'App\Http\Controllers\FrontendController@pdf');
-
+Route::get('/pdf/{id}', 'App\Http\Controllers\FrontendController@pdf');
 // DASHBOARD CONTROLLER
 Route::post('/sauverecole','App\Http\Controllers\DashboardController@sauverecole');
 Route::post('/modifierecole','App\Http\Controllers\DashboardController@modifierecole');
