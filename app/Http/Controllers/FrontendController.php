@@ -46,12 +46,12 @@ class FrontendController extends Controller
     function about(){
         return view ('frontend.about');
     }
-
+    
     function pdf($id){
         $ecole = Ecole::where('fichier', $id)->first();
         return response()->file(public_path('pdf/pdf/'.$ecole->fichier));
 
-        // $pdf = Offre::find($id);
+        // $pdf = Offre::find($id); h
         // return response($pdf->offres->fichiers, 200)->header('Content-Type', 'application/pdf');
     }
 

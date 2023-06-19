@@ -89,7 +89,7 @@
 
             <div class="course-info d-flex justify-content-between align-items-center">
               <a class="btn btn-danger"  href="{{url('pdf/'.$ecoles->fichier)}}"><h4 style="color: aliceblue">fiche de renseignement a lire</h4></a>
-               {{-- <img src="{{asset('pdf/pdf/'.$offres->fichier)}}" alt="">  --}}
+               {{-- <img src="{{asset('jehej jpdf/pdf/'.$offres->fichier)}}" alt="">  --}}
               <p></p>
             </div>
           </div>
